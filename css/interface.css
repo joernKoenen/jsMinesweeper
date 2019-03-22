@@ -1,0 +1,12 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  width: 40px;
+}
+
+#game {
+  text-align: center;
+  align-items: center;
+}

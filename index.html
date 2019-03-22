@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/interface.css" />
+	<title>Minesweeper</title>
+	<link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+</head>
+
+<body>
+	<div id="game">
+		<h1>Minesweeper</h1><br>
+		Column:<input type="number" step="1" min="1" max="100" required value="10" id="column">
+		Row:<input type="number" step="1" min="1" max="100" required value="10" id="row">
+		Bombs:<input type="number" step="1" min="1" max="10000" required value="10" id="bombs">
+		Scale:<input type="number" step="1" min="1" max="100" required value="50" id="scale">
+		<button onclick="start()">New Game</button><br>
+		Bombs left: <span id="currentBombs">0</span>
+		  Time passed: <span id="time">0</span>s<br><br>
+		 <canvas width="0" height="0" id="drawer"></canvas>
+	</div>
+
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>
