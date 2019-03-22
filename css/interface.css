@@ -2,11 +2,51 @@
   font-family: 'Roboto', sans-serif;
 }
 
+ul {
+  z-index: 8;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+}
+
+li {
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border: 2px solid black;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+li a:hover:not(.active) {
+  color: #FF2255;
+  border-color: #FF2255;
+}
+
+.active {
+  color: #FF2255;
+  border-color: #FF2255;
+}
+
 input {
   width: 40px;
 }
 
 #game {
+  padding-top: 40px;
   text-align: center;
   align-items: center;
 }
