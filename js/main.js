@@ -251,3 +251,25 @@ window.setInterval(function() {
 canvas.addEventListener('click', clickOnTile, false)
 canvas.addEventListener('contextmenu', rightlickOnTile, false)
 canvas.addEventListener('dblclick', doubleClickOnTile, false)
+
+
+function easy() {
+  document.getElementById('column').value = 9
+  document.getElementById('row').value = 9
+  document.getElementById('bombs').value = 10
+  document.getElementById('scale').value = 50
+}
+
+function medium() {
+  document.getElementById('column').value = 16
+  document.getElementById('row').value = 16
+  document.getElementById('bombs').value = 40
+  document.getElementById('scale').value = 40
+}
+
+function hard() {
+  document.getElementById('column').value = 30
+  document.getElementById('row').value = 16
+  document.getElementById('bombs').value = 99
+  document.getElementById('scale').value = 40
+}
