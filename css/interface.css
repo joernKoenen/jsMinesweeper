@@ -27,3 +27,8 @@ input {
   text-align: center;
   align-items: center;
 }
+
+#howto {
+  margin: auto;
+  width: 25%;
+}

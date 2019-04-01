@@ -19,14 +19,23 @@
 
 	<div id="game">
 		<h1>Minesweeper</h1>
-		Column:<input type="number" step="1" min="1" max="100" required value="10" id="column">
+		<p>Column:<input type="number" step="1" min="1" max="100" required value="10" id="column">
 		Row:<input type="number" step="1" min="1" max="100" required value="10" id="row">
 		Bombs:<input type="number" step="1" min="1" max="10000" required value="10" id="bombs">
 		Scale:<input type="number" step="1" min="1" max="100" required value="50" id="scale">
 		<button onclick="start()">New Game</button><br>
 		Bombs left: <span id="currentBombs">0</span>
-		Time passed: <span id="time">0</span>s<br><br>
+		Time passed: <span id="time">0</span>s</p><br><br>
 		<canvas width="0" height="0" id="drawer"></canvas>
+	</div>
+
+	<div id="howto">
+		<p>How to Play</p>
+		<ul>
+			<li>Left click to step on a spot</li>
+			<li>Right click to mark a spot as a bomb</li>
+			<li>Double click to open all 8 spots nearby a target (except ones already marked as bombs using right clicks)</li>
+		<ul>
 	</div>
 
 	<script type="text/javascript" src="js/main.js"></script>
