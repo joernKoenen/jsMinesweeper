@@ -1,5 +1,5 @@
 # jsMinesweeper
-### [Play here](https://asirt.github.io/jsMinesweeper/)
+### [Play here](https://jkoenen2.github.io/jsMinesweeper/)
 ### How to Play
  - Left click to step on a spot
  - Right click to mark a spot as a bomb
