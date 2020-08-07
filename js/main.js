@@ -7,6 +7,7 @@ var field
 var view
 var time = 0
 var playing = false
+var firstClick = false
 var bombsleft
 var revealleft
 var bombs
@@ -32,7 +33,7 @@ function start() {
   ctx.textBaseline = 'middle'
 
   // check if too many bombs
-  if (bombs > (column * row)) bombs = column * row
+  if (bombs >= (column * row)) bombs = (column * row) - 1
 
   // paint the canvas gray
   ctx.fillStyle = 'silver'
@@ -70,13 +71,24 @@ function start() {
     }
   }
 
+  // set settings
+  time = 0
+  revealleft = row * column - bombs
+  playing = true
+  firstClick = false
+  bombsleft = bombs
+  document.getElementById('currentBombs').innerHTML = bombsleft
+  document.getElementById('time').innerHTML = time
+}
+
+function generateBombs(clickX, clickY) {
   // generate bombs
   for (var i = 0; i < bombs; i++) {
     var bombX = Math.floor((Math.random() * column))
     var bombY = Math.floor((Math.random() * row))
 
     // check if field already is a bomb
-    if (field[bombX][bombY] === 9) i--
+    if (field[bombX][bombY] === 9 || (bombX == clickX && bombY == clickY)) i--
     else {
       field[bombX][bombY] = 9
       // generate the numbers around the bomb
@@ -89,13 +101,6 @@ function start() {
       }
     }
   }
-
-  // set settings
-  time = 0
-  revealleft = row * column - bombs
-  playing = true
-  bombsleft = bombs
-  document.getElementById('currentBombs').innerHTML = bombsleft
 }
 
 function clickOnTile(ev) {
@@ -107,6 +112,10 @@ function clickOnTile(ev) {
     if (field[clickX] !== undefined && field[clickX][clickY] !== undefined) {
       // check if the field got clicked before
       if (view[clickX][clickY] === 0) {
+        if (!firstClick) {
+          generateBombs(clickX, clickY)
+          firstClick = true
+        }
         reveal(clickX, clickY)
       } else if (view[clickX][clickY] === 2) {
         // clear field
@@ -242,7 +251,7 @@ function checkwin() {
 }
 
 window.setInterval(function() {
-  if (playing) {
+  if (playing && firstClick) {
     time++
     document.getElementById('time').innerHTML = time
   }
